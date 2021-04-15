@@ -6,7 +6,9 @@
 <%=f.label :content%>
 <%=f.text_field :content%>
 
+<%=f.label :tags%>
 <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+<%=f.label :tags%>
 <%= f.fields_for :tags, @post.tags.build do |tags_fields| %>
     <%= tags_fields.text_field :name %>
 <% end %>
